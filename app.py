@@ -17,7 +17,10 @@ st.title("📊 Financial AI Chatbot")
 st.write("Ask questions about financial data (Apple, Microsoft, Tesla)")
 
 user_input = st.text_input("Enter your question:")
-
+if user_input:
+    if st.button("Ask"):
+        answer = ask_llm(user_input)
+        st.success(answer)
 
 def ask_llm(question):
     try:
