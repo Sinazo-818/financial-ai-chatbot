@@ -3,6 +3,12 @@ import os
 import streamlit as st
 from openai import OpenAI
 
+def load_data():
+    with open("financial_data.txt", "r") as f:
+        return f.read()
+
+financial_context = load_data()
+
 client = OpenAI(api_key=st.secrets["OPENAI_API_KEY"])
 
 
@@ -14,13 +20,20 @@ user_input = st.text_input("Enter your question:")
 
 
 def ask_llm(question):
+    try:
     prompt = f"""
     You are a financial analyst.
 
-    Only use the provided data.
-    Do NOT make predictions.
+    Use ONLY the data below to answer.
 
-    Question: {question}
+    If the question is about the future, say:
+    "I do not have enough information to answe future-oriented questions."
+
+    DATA
+    {financial_context}
+
+    QUESTION
+    {question}
     """
 
     response = client.chat.completions.create(
@@ -31,12 +44,8 @@ def ask_llm(question):
 
     return response.choices[0].message.content
 
-
-if st.button("Ask"):
-    if user_input:
-        answer = ask_llm(user_input)
-        st.write("### Answer:")
-        st.write(answer)
+except Exception:
+        return "⚠️ API issue or limit reached. Please try again later."
 
 
 load_dotenv()
