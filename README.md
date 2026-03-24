@@ -41,13 +41,14 @@ Net Income
 Cash Flow
 Debt Ratio
 
- Tech Stack
+ Tech Stack:
 Python
 Streamlit
 OpenAI API
 Prompt engineering (RAG approach)
 Environment-based secret management
- How It Works
+
+	How It Works:
 User enters a financial question
 The app loads structured financial data
 The question + data are passed to the LLM
@@ -56,11 +57,13 @@ The model generates a response based only on the provided context
 “Compare Apple and Microsoft financially”
 “Which company has the lowest debt ratio?”
 “Which company generates the most cash flow?”
- Limitations
+ 
+	Limitations:
 Only answers questions based on the provided dataset
 Cannot make predictions about future performance
 API usage may be limited without billing enabled
- Key Skills Demonstrated
+
+	Key Skills Demonstrated:
 LLM integration via API
 Retrieval-Augmented Generation (RAG)
 Prompt engineering
