@@ -1,0 +1,17 @@
+Apple:
+Revenue: 394B
+Net Income: 99B
+Cash Flow: 122B
+Debt Ratio: 0.84
+
+Microsoft:
+Revenue: 211B
+Net Income: 72B
+Cash Flow: 89B
+Debt Ratio: 0.51
+
+Tesla:
+Revenue: 96B
+Net Income: 15B
+Cash Flow: 14B
+Debt Ratio: 0.35
