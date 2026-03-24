@@ -44,7 +44,7 @@ def ask_llm(question):
 
         return response.choices[0].message.content
 
-except Exception:
+    except Exception:
         return "⚠️ API issue or limit reached. Please try again later."
 
 
