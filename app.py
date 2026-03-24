@@ -4,7 +4,7 @@ import streamlit as st
 from openai import OpenAI
 
 def load_data():
-    with open("financial_data.txt", "r") as f:
+    with open("financial data.txt", "r") as f:
         return f.read()
 
 financial_context = load_data()
