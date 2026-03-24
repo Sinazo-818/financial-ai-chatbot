@@ -17,10 +17,6 @@ st.title("📊 Financial AI Chatbot")
 st.write("Ask questions about financial data (Apple, Microsoft, Tesla)")
 
 user_input = st.text_input("Enter your question:")
-if user_input:
-    if st.button("Ask"):
-        answer = ask_llm(user_input)
-        st.success(answer)
 
 def ask_llm(question):
     try:
@@ -49,6 +45,11 @@ def ask_llm(question):
 
     except Exception:
         return "⚠️ API issue or limit reached. Please try again later."
+
+if user_input:
+    if st.button("Ask"):
+        answer = ask_llm(user_input)
+        st.success(answer)
 
 
 load_dotenv()
